@@ -8,7 +8,6 @@ chrome.storage.sync.get(['zici_better_zhihu', 'better_zhihu_step'], function (it
         if (item.better_zhihu_step) {
             step = item.better_zhihu_step * 1000;
         }
-        console.log(step)
 
         var title = $(document);
         title.bind('DOMNodeInserted', function (e) {

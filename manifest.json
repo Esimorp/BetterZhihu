@@ -1,9 +1,8 @@
 {
   "name": "Better Zhihu",
-  "version": "1.1",
+  "version": "1.2",
   "description": "更好的知乎",
-  "icons":
-  {
+  "icons": {
     "128": "icon.png"
   },
   "manifest_version": 2,
@@ -16,7 +15,17 @@
       ],
       "js": [
         "zepto.min.js",
-        "better_zhihu.js"
+        "better_zhihu_question.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://www.zhihu.com/people/*"
+      ],
+      "js": [
+        "zepto.min.js",
+        "better_zhihu_people.js"
       ],
       "run_at": "document_end"
     }
