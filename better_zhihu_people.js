@@ -10,7 +10,7 @@ chrome.storage.sync.get(['zici_better_zhihu', 'better_zhihu_step'], function (it
             }
             var followButtons = $(".Button.FollowButton.Button--primary.Button--blue");
             for (var i = 0; i < followButtons.length; i++) {
-                if ($(followButtons[i]).text() === "关注他" || $(followButtons[i]).text() === "关注她") {
+                if ($(followButtons[i]).text() === "关注他" || $(followButtons[i]).text() === "关注她"|| $(followButtons[i]).text() === "关注") {
                     if ($(followButtons[i]).parent().hasClass("MemberButtonGroup") && $(followButtons[i]).parent().hasClass("ProfileButtonGroup") && $(followButtons[i]).parent().hasClass("ProfileHeader-buttons")) {
                         $("<button id='yaowan' class='Button FollowButton Button--primary Button--blue'>💊药丸</button>").insertBefore(followButtons[i]);
                     }
