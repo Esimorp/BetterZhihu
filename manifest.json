@@ -1,6 +1,6 @@
 {
   "name": "Better Zhihu",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "更好的知乎",
   "icons": {
     "128": "icon.png"
@@ -8,8 +8,14 @@
   "manifest_version": 2,
   "options_page": "options.html",
   "content_security_policy": "script-src 'self' ; object-src 'self'",
-  "content_scripts": [
-    {
+  "background": {
+    "scripts": [
+      "zepto.min.js",
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [{
       "matches": [
         "https://www.zhihu.com/question/*"
       ],
@@ -28,9 +34,22 @@
         "better_zhihu_people.js"
       ],
       "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://zhuanlan.zhihu.com/*"
+      ],
+      "js": [
+        "zepto.min.js",
+        "better_zhihu_article.js"
+      ],
+      "run_at": "document_end"
     }
   ],
   "permissions": [
-    "storage"
+    "storage",
+    "cookies",
+    "*://*.zhihu.com/",
+    "*://*/_generated_background_page.html"
   ]
 }
