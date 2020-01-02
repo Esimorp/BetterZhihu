@@ -1,8 +1,8 @@
 chrome.storage.sync.get(['zici_better_zhihu', 'better_zhihu_step'], function(item) {
-    // if (item.zici_better_zhihu !== "1") {
-    //   alert("你没有兹磁Better Zhihu的用户协议，所以无法使用Better Zhihu")
-    //   return;
-    // }
+    if (item.zici_better_zhihu !== "1") {
+      alert("你没有兹磁Better Zhihu的用户协议，所以无法使用Better Zhihu")
+      return;
+    }
     var step = 2000;
     if (item.better_zhihu_step) {
         step = item.better_zhihu_step * 1000;
